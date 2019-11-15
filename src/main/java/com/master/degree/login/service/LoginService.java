@@ -6,9 +6,11 @@ import com.master.degree.login.exception.UnauthorizedException;
 import com.master.degree.login.model.LoginDto;
 import com.master.degree.login.model.LoginResponse;
 import com.master.degree.login.model.UserDto;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class LoginService {
 
     private UserClient userClient;

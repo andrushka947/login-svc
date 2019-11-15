@@ -1,0 +1,5 @@
+api:
+  user-svc:
+    host: "http://localhost:8080"
+server:
+  port: 8081

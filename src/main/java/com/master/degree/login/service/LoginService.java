@@ -1,6 +1,5 @@
 package com.master.degree.login.service;
 
-import com.master.degree.login.client.UserClient;
 import com.master.degree.login.exception.BadRequestException;
 import com.master.degree.login.exception.UnauthorizedException;
 import com.master.degree.login.model.LoginDto;
@@ -13,10 +12,10 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class LoginService {
 
-    private UserClient userClient;
+    private UserService userService;
 
     public LoginResponse login(LoginDto dto) {
-        UserDto user = userClient.getUser(dto.getEmail());
+        UserDto user = userService.getUser(dto.getEmail());
         if (user == null) {
             throw new BadRequestException("Wrong email provided");
         }

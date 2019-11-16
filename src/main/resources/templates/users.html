@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Users</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+</head>
+
+<body>
+<div class="form-group w-50 p-3" th:switch="${users}">
+    <h2 th:case="null">No users yet!</h2>
+    <div th:case="*" class="table table-striped">
+        <h2 class="display-4">Users</h2>
+        <table>
+            <thead>
+            <tr>
+                <th scope="col">Email</th>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.surname}"></td>
+                <td><a th:href="@{/users/delete/{email}(email=${user.email})}" >Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <button class="btn btn-light"><a href="/web/signup">Add a new user</a></button>
+
+</div>
+</body>
+</html>

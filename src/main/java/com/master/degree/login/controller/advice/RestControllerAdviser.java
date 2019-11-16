@@ -4,6 +4,7 @@ import com.master.degree.login.exception.BadRequestException;
 import com.master.degree.login.exception.ResourceNotAvailableException;
 import com.master.degree.login.exception.UnauthorizedException;
 import com.master.degree.login.model.ErrorResponse;
+import feign.RetryableException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -27,6 +28,11 @@ public class RestControllerAdviser {
     @ExceptionHandler(ResourceNotAvailableException.class)
     public ErrorResponse handleResourceNotAvailableException(ResourceNotAvailableException ex) {
         return new ErrorResponse(ex.getMessage());
+    }
+    @ExceptionHandler(RetryableException.class)
+    @ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
+    public ErrorResponse handleRetryableException(RetryableException ex) {
+        return new ErrorResponse("Resource is not available");
     }
 
 }

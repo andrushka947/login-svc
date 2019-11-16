@@ -1,5 +1,5 @@
 api:
   user-svc:
-    host: "http://user-svc:8080"
+    host: "http://user-svc"
 server:
   port: 8081

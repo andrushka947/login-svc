@@ -6,6 +6,6 @@ RUN yum install -y \
 
 ENV JAVA_HOME /etc/alternatives/jre
 
-COPY target/user-service-1.0-SNAPSHOT.jar /app/login-svc.jar
+COPY target/login-svc-1.0-SNAPSHOT.jar /app/login-svc.jar
 
 CMD ["/usr/bin/java", "-jar", "-Dspring.profiles.active=default", "/app/login-svc.jar"]

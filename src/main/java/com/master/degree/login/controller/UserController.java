@@ -1,13 +1,18 @@
 package com.master.degree.login.controller;
 
+import com.master.degree.login.model.ErrorResponse;
 import com.master.degree.login.model.UserDto;
 import com.master.degree.login.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/users")
@@ -22,10 +27,17 @@ public class UserController {
     }
 
     @PostMapping
-    public String signup(UserDto userDto, Model model) {
-        userService.signup(userDto);
+    public String signup(UserDto userDto, RedirectAttributes redirectAttributes) {
+        List<String> emailList = userService.getUsers().stream()
+                .map(UserDto::getEmail)
+                .collect(Collectors.toList());
 
-        model.addAttribute("users", userService.getUsers());
+        if (emailList.contains(userDto.getEmail())) {
+            redirectAttributes.addAttribute("error", "Email is taken");
+            return "redirect:/web/signup";
+        }
+
+        userService.signup(userDto);
         return "redirect:/web/users";
     }
 

@@ -1,6 +1,6 @@
-package com.master.degree.login.client.decoder;
+package com.master.degree.web_service.client.decoder;
 
-import com.master.degree.login.exception.ResourceNotAvailableException;
+import com.master.degree.web_service.exception.ResourceNotAvailableException;
 import feign.Response;
 import feign.codec.ErrorDecoder;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.master.degree.login;
+package com.master.degree.web_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

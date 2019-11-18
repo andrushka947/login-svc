@@ -1,4 +1,4 @@
-package com.master.degree.login.controller;
+package com.master.degree.web_service.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

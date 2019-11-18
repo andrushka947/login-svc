@@ -1,6 +1,6 @@
-package com.master.degree.login.client;
+package com.master.degree.web_service.client;
 
-import com.master.degree.login.model.UserDto;
+import com.master.degree.web_service.model.UserDto;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 

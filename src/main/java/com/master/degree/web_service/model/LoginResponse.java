@@ -1,4 +1,4 @@
-package com.master.degree.login.model;
+package com.master.degree.web_service.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

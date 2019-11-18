@@ -1,8 +1,7 @@
-package com.master.degree.login.service;
+package com.master.degree.web_service.service;
 
-import com.master.degree.login.client.UserClient;
-import com.master.degree.login.model.LoginResponse;
-import com.master.degree.login.model.UserDto;
+import com.master.degree.web_service.client.UserClient;
+import com.master.degree.web_service.model.UserDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

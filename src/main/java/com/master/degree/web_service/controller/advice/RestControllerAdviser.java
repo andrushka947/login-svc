@@ -1,9 +1,9 @@
-package com.master.degree.login.controller.advice;
+package com.master.degree.web_service.controller.advice;
 
-import com.master.degree.login.exception.BadRequestException;
-import com.master.degree.login.exception.ResourceNotAvailableException;
-import com.master.degree.login.exception.UnauthorizedException;
-import com.master.degree.login.model.ErrorResponse;
+import com.master.degree.web_service.exception.BadRequestException;
+import com.master.degree.web_service.exception.ResourceNotAvailableException;
+import com.master.degree.web_service.exception.UnauthorizedException;
+import com.master.degree.web_service.model.ErrorResponse;
 import feign.RetryableException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;

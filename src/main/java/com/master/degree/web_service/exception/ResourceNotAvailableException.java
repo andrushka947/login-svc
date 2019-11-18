@@ -1,4 +1,4 @@
-package com.master.degree.login.exception;
+package com.master.degree.web_service.exception;
 
 import lombok.Data;
 import org.springframework.http.HttpStatus;

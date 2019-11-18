@@ -1,4 +1,4 @@
-package com.master.degree.login.model;
+package com.master.degree.web_service.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
